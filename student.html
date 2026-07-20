@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body class="student-page">
+    <div class="student-panel">
+        <h1>Student Lookup</h1>
+        <div id="topper-box" class="topper-box">Topper: no students yet</div>
+        <div class="field-group">
+            <label for="lookup-name">Student name</label>
+            <input id="lookup-name" type="text" placeholder="Enter student name" />
+        </div>
+        <button id="lookup-button" class="primary-button">Find Marks</button>
+        <div id="student-result" class="result-box">Enter a name and press Find Marks.</div>
+        <div class="student-list-card">
+            <h2>All stored students</h2>
+            <ul id="all-students"></ul>
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>

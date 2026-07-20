@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="teacher-page">
+    <div class="content">
+        <div class="entry-card">
+            <h1>Teacher Panel</h1>
+            <div class="field-group">
+                <label for="student-name">Student name</label>
+                <input id="student-name" type="text" placeholder="Enter student name" />
+            </div>
+            <div class="field-group">
+                <label for="student-marks">Student marks</label>
+                <input id="student-marks" type="number" placeholder="Enter marks" min="0" />
+            </div>
+            <button id="add-student" class="primary-button">Save Student</button>
+            <div id="teacher-message" class="message"></div>
+            <div class="student-list-card">
+                <h2>Saved students</h2>
+                <ul id="student-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
