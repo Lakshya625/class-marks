@@ -119,7 +119,13 @@ function initTeacherPage() {
     const marks = Number(marksValue);
 
     if (!name) {
-      setMessage('teacher-message', 'Please enter a student name.', true);
+      setMessage('teacher-message', 'Please enter a student full name.', true);
+      return;
+    }
+
+    const nameParts = name.split(/\s+/).filter(Boolean);
+    if (nameParts.length < 2) {
+      setMessage('teacher-message', 'Please enter the student full name (first and last name).', true);
       return;
     }
 
@@ -128,8 +134,14 @@ function initTeacherPage() {
       return;
     }
 
-    const percentage = (marks / TOTAL_MARKS) * 100;
     const students = getStoredStudents();
+    const duplicate = students.some((student) => student.name.toLowerCase() === name.toLowerCase());
+    if (duplicate) {
+      setMessage('teacher-message', 'A student with that full name already exists. Try adding class and roll number for students with the same name.', true);
+      return;
+    }
+
+    const percentage = (marks / TOTAL_MARKS) * 100;
     students.push({ name, percentage });
     saveStudents(students);
     renderList('student-list', students, { showDelete: true });
